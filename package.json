@@ -22,14 +22,15 @@
     "prebuild": "rimraf dist",
     "build": "tsc --project ./tsconfig.build.json",
     "commitmsg": "commitlint -e $GIT_PARAMS",
+    "coverage": "vitest run --coverage",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
+    "semantic-release": "semantic-release",
     "test": "vitest",
-    "test:watch": "vitest --watch",
-    "semantic-release": "semantic-release"
+    "test:ui": "vitest --ui"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.ts": [
       "eslint --fix",
       "prettier --write"
     ]
@@ -45,6 +46,8 @@
     "@types/node": "16.11.39",
     "@typescript-eslint/eslint-plugin": "5.27.1",
     "@typescript-eslint/parser": "5.27.1",
+    "@vitest/ui": "0.14.2",
+    "c8": "7.11.3",
     "conventional-changelog-conventionalcommits": "5.0.0",
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
